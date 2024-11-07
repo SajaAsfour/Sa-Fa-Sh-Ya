@@ -1,1 +1,6 @@
-
+// Define pin numbers
+const int trigPin = 11;     // Trigger pin for HC-SR04
+const int echoPin = 10;    // Echo pin for HC-SR04
+const int greenLed = 3;    // Green LED pin
+const int yellowLed = 4;   // Yellow LED pin
+const int redLed = 5;      // Red LED pin
