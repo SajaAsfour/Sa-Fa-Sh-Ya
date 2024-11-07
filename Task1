@@ -17,4 +17,22 @@ void setup() {
   pinMode(redLed, OUTPUT);
   pinMode(potPin, INPUT);
 }
+void loop() {
+  long duration, distance;
+  
+  // Read the potentiometer value and map it to a distance threshold range
+  int potValue = analogRead(potPin);
+  int redThreshold = map(potValue, 0, 1023, 5, 15); // Adjusts the red threshold between 5 cm and 15 cm
+  int yellowThreshold = map(potValue, 0, 1023, 15, 25);   // Adjusts the yellow threshold between 15 cm and 25 cm
+
+  // Trigger the ultrasonic sensor
+  digitalWrite(trigPin, LOW);
+  delayMicroseconds(2);
+  digitalWrite(trigPin, HIGH);
+  delay(10);
+  digitalWrite(trigPin, LOW);
+
+  // Read the duration and calculate the distance
+  duration = pulseIn(echoPin, HIGH);
+  distance = (duration / 2) * 0.0343;
 
