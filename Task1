@@ -4,3 +4,17 @@ const int echoPin = 10;    // Echo pin for HC-SR04
 const int greenLed = 3;    // Green LED pin
 const int yellowLed = 4;   // Yellow LED pin
 const int redLed = 5;      // Red LED pin
+
+void setup() {
+  // Initialize serial communication
+  Serial.begin(9600);
+  
+  // Initialize pin modes
+  pinMode(trigPin, OUTPUT);
+  pinMode(echoPin, INPUT);
+  pinMode(greenLed, OUTPUT);
+  pinMode(yellowLed, OUTPUT);
+  pinMode(redLed, OUTPUT);
+  pinMode(potPin, INPUT);
+}
+
